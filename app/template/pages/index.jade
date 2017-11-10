@@ -1,0 +1,24 @@
+doctype html
+html(lang='ru-RU')
+	include ../common/headGM.jade
+
+	body
+		<!-- Google Tag Manager -->
+		noscript <iframe src="//www.googletagmanager.com/ns.html?id=GTM-TRNP8W" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		script
+			| (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-TRNP8W');
+		<!-- End Google Tag Manager -->
+		<!--PRELOADERGM-->
+		.preloaderGM
+			.pre_circles
+				.pre_circle1
+				.pre_circle2
+		<!-- END PRELOADERGM-->
+		include ../common/variables.jade
+		include ../common/header.jade
+
+		include ../common/footerGM.jade
+
+		// SECTION 1
+		include ../common/form.jade
+
