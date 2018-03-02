@@ -1,5 +1,5 @@
-# fastTemplate
-fast template for freelance
+# Gmtemplate
+template for geniusmMarketing
 #how to use
   1. npm i
   2. gulp gulp-jade - to use jade syntax
@@ -7,8 +7,9 @@ fast template for freelance
   4. gulp build - to build project to dist directory (minify css, js, optimisation img and onther)
 
 #some info
-  1. default set GeniusMarketing starting template
-  2. to change template, open app/teplate/pages/index.jade and change name of template in this file to freelance.jade
+  1. all styles in scss
+  2. all libs styles imported in sass/libs.scss 
+  3. all new styles imported in sass/mainGM.scss
 
 #examples for some features
   1. For timer add use this blocks:

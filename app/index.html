@@ -216,6 +216,7 @@
         var output = false;
         var name, email, phone;
         form = $(formid); // указать ID формы !
+        form.addClass('loading');
         form.find('input.name').focus();
         form.find('input.email').focus();
         form.find('input.phone').focus();
@@ -262,6 +263,7 @@
         }
         else
         {
+          form.removeClass('loading');
           form.find('input.error').first().focus();
         }
         return output;
@@ -270,6 +272,7 @@
     <!-- END Validation script -->
     <!-- SECTION 1-->
     <form id="form_event_date_1" accept-charset="utf-8" onsubmit="return validate(form_event_date_1,111,'formSubmitted_event_date');" action="https://www.geniusm360.ru/add_subscriber.html" method="post" class="standart-form">
+      <div class="loader"></div>
       <div class="part part1">
         <p class="label">Ваше имя и фамилия</p>
         <input name="name" type="text" placeholder="Введите Ваше имя и фамилию" required="" class="name">

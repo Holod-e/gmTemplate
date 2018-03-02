@@ -131,6 +131,7 @@ script.
 			var output = false;
 			var name, email, phone;
 			form = $(formid); // указать ID формы !
+			form.addClass('loading');
 			form.find('input.name').focus();
 			form.find('input.email').focus();
 			form.find('input.phone').focus();
@@ -174,6 +175,7 @@ script.
 			}
 			else
 			{
+				form.removeClass('loading');
 				form.find('input.error').first().focus();
 			}
 			return output;
