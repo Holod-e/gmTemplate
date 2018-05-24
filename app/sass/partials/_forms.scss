@@ -9,8 +9,6 @@ form.standart-form {
 	}
 	.label {
 		text-align: left;
-		color: $form-label-color;
-		font-family: $form-label-font;
 		font-weight: 400;
 		font-size: 15px;
 		line-height: 22px;
@@ -25,7 +23,6 @@ form.standart-form {
 		border: 1px solid #dcdcdc;
 		border-radius: 3px;
 		padding-left: 15px;
-		font-family: $form-input-font;
 		font-weight: 400;
 		font-size: 16px;
 		line-height: 45px;

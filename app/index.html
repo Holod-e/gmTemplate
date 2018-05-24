@@ -1,6 +1,27 @@
+<!-- VARIABLES FOR FORM #1-->
+<!-- variables for GTM-->
 <!DOCTYPE html>
 <html lang="ru-RU">
   <head>
+    <!-- Google Tag Manager-->
+    <script>
+      (function(w, d, s, l, i)
+      {
+        w[l] = w[l] || [];
+        w[l].push(
+        {
+          'gtm.start': new Date().getTime(),
+          event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-TRNP8W');
+    </script>
+    <!-- End Google Tag Manager-->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Заголовок</title>
@@ -15,47 +36,23 @@
     <!-- build:css css/libs.min.css -->
     <link rel="stylesheet" href="css/libs.css">
     <!-- endbuild -->
-    <!-- build:css css/main.min.css -->
+    <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/mainGM.css">
-    <!-- endbuild -->
+    <link rel="stylesheet" href="css/media.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- VK-script -->
   </head>
   <body>
-    <!-- Google Tag Manager -->
+    <!-- Google Tag Manager (noscript)-->
     <noscript>
-      <iframe src="//www.googletagmanager.com/ns.html?id=GTM-TRNP8W" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TRNP8W" height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
-    <script>
-      (function(w, d, s, l, i)
-      {
-        w[l] = w[l] || [];
-        w[l].push(
-        {
-          'gtm.start': new Date().getTime(),
-          event: 'gtm.js'
-        });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != 'dataLayer' ? '&l=' + l : '';
-        j.async = true;
-        j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, 'script', 'dataLayer', 'GTM-TRNP8W');
-    </script>
-    <!-- End Google Tag Manager -->
-    <!--PRELOADERGM-->
-    <div class="preloaderGM">
+    <!--Google End Tag Manager (noscript)-->
+    <div class="preloader">
       <div class="pre_circles">
         <div class="pre_circle1"></div>
         <div class="pre_circle2"></div>
       </div>
     </div>
-    <!-- END PRELOADERGM-->
-    <!-- VARIABLES FOR FORM #1-->
-    <header class="main-header">
-      <!--Header code-->
-    </header>
     <!-- FOOTER-->
     <footer class="main-footer">
       <div class="container">
@@ -75,11 +72,12 @@
         </div>
         <div class="footer2">
           <div class="footer-inline">
-            <a target="_blank" href="https://geniusmarketing.me/politika-konfidencialnosti/" class="modal-btn">Политика конфиденциальности</a>
-            <a target="_blank" href="https://geniusmarketing.me/otkaz-ot-otvetstvennosti/" class="modal-btn">Отказ от ответственности</a>
-            <a target="_blank" href="https://geniusmarketing.me/soglasie-s-rassylkoj/" class="modal-btn">Согласие с рассылкой</a>
-            <a target="_blank" href="https://geniusmarketing.me/politika-vozvrata-denezhnyx-sredstv/" class="modal-btn">Политика возврата</a>
-            <a target="_blank" href="https://geniusmarketing.me/usloviya-oferty/" class="modal-btn">Публичный договор</a>
+            <a href="https://geniusmarketing.me/terms" target="_blank" class="modal-btn">Условия оказания услуг</a>
+            <a href="https://geniusmarketing.me/privacy" target="_blank" class="modal-btn">Политика конфиденциальности</a>
+            <a href="https://geniusmarketing.me/terms/#refund" target="_blank" class="modal-btn">Условия возврата</a>
+            <a href="https://geniusmarketing.me/terms/#preorder" target="_blank" class="modal-btn">Условия предзаказа услуг</a>
+            <a href="https://geniusmarketing.me/terms/#provider" target="_blank" class="modal-btn">Поставщики услуг</a>
+            <a href="https://geniusmarketing.me/disclaimer" target="_blank" class="modal-btn">Предупреждение</a>
           </div>
         </div>
         <div class="footer3">
@@ -116,30 +114,30 @@
       </div>
     </footer>
     <!-- END FOOTER-->
-    <!-- HIDDEN ELEMENTS (MODALS) -->
-    <div id="modal-contact" class="modal-overlay">
+    <!-- HIDDEN ELEMENTS (MODALS)-->
+    <div id="modal-video" class="modal-overlay">
       <div class="modal-content">
         <div class="close-button">
           <div class="one"></div>
           <div class="two"></div>
         </div>
-        <div id="video-popup"></div>
+        <div class="video">
+          <div id="video-popup"></div>
+        </div>
       </div>
     </div>
-    <!-- END HIDDEN ELEMENTS (MODALS) -->
+    <!-- END HIDDEN ELEMENTS (MODALS)-->
     <!-- build:js js/libs.min.js -->
-    <script src="js/tingle.js"></script>
     <script src="js/AnchorScroller.js"></script>
     <script src="js/cookie.js"></script>
     <script src="js/jquery.cookie.js"></script>
     <script src="js/validatorGM.js"></script>
-    <script src="js/intlTelInput.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/popup_script.js"></script>
+    <script src="js/jquery.countdown.js"></script>
     <!-- endbuild -->
-    <!-- build:js js/common.min.js -->
+    <script src="js/intlTelInput.min.js"></script>
     <script src="js/common.js"></script>
-    <!-- endbuild -->
     <!--auto country code srcipt -->
     <script>
       $(function()
@@ -206,7 +204,7 @@
             $('#phone').val('+' + dialCode);
           }
         });
-      })
+      });
     </script>
     <!--end auto country code srcipt -->
     <!--Validation script -->
@@ -215,7 +213,7 @@
       {
         var output = false;
         var name, email, phone;
-        form = $(formid); // указать ID формы !
+        form = $(formid);
         form.addClass('loading');
         form.find('input.name').focus();
         form.find('input.email').focus();
@@ -227,11 +225,8 @@
         phone = phone.replace(/\s/g, '');
         $(".last1").val(phone);
         exp = 'crm/' + idexport;
-        // После того, как мы нажали кнопку "Отправить", делаем проверку,
-        // если кол-во полей с классов .not_error равно 3(так как у нас всего 3 поля), то есть все поля заполнены верно,
         if ($('.not_error').length == 3)
         {
-          // после успешной проверки отправляем форму и ставим куки
           $.ajax(
           {
             type: "POST",
@@ -270,30 +265,5 @@
       };
     </script>
     <!-- END Validation script -->
-    <!-- SECTION 1-->
-    <form id="form_event_date_1" accept-charset="utf-8" onsubmit="return validate(form_event_date_1,111,'formSubmitted_event_date');" action="https://www.geniusm360.ru/add_subscriber.html" method="post" class="standart-form">
-      <div class="loader"></div>
-      <div class="part part1">
-        <p class="label">Ваше имя и фамилия</p>
-        <input name="name" type="text" placeholder="Введите Ваше имя и фамилию" required="" class="name">
-      </div>
-      <div class="part part2">
-        <p class="label">Ваше e-mail</p>
-        <input name="email" type="email" placeholder="Введите Ваш e-mail" required="" class="email">
-      </div>
-      <div class="part part3">
-        <p class="label">Ваш телефон</p>
-        <input id="phone" name="phone" type="text" required="" class="phone">
-      </div>
-      <div class="part part4">
-        <input id="last1" type="hidden" name="custom_telephone" class="last1">
-        <input id="checktoken" type="hidden" name="campaign_token" value="XXX">
-        <input id="checkrespo" type="hidden" name="thankyou_url" value="https://academy.geniusmarketing.me/checkout/all">
-        <input id="emailexist" type="hidden" name="email_exists_url" value="https://academy.geniusmarketing.me/checkout/all">
-        <input type="hidden" name="forward_data" value="">
-        <input type="hidden" name="start_day" value="0">
-      </div>
-      <input type="submit" value="Принять участие" class="btn subm">
-    </form>
   </body>
 </html>
