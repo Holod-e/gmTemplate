@@ -50,3 +50,9 @@ $(document).ready(function() {
     e.preventDefault();
     anchorScroller(this, 1500);
   });
+
+  $('.btn-utm').each(function(){
+    var utm = window.location.search.substr(1);
+    var url = $(this).attr('href');
+    $(this).attr('href', url + '?' + utm);
+  });
