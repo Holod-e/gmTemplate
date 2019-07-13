@@ -27,7 +27,6 @@
     <meta property="og:title" content="title">
     <meta property="og:description" content="Описание">
     <meta property="og:image" content="http://geniusmarketing.me/pic.png">
-    <meta property="og:url" content="http://geniusmarketing.me/">
     <meta property="fb:admins" content="1510615147">
     <meta property="fb:app_id" content="473200492729081">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><!-- build:css css/libs.min.css -->
@@ -53,14 +52,14 @@
       <div class="container">
         <div class="footer1">
           <div class="copy-wrap">
-            <p class="copy"><img src="img/footer-logo.png"><br><br>ТОВ "МАРКЕТИНГ КОНСАЛТИНГ"<br>ЕГРПОУ: 40300106, Адрес: 01033, г. Киев,<br>ул. Паньковская, 14</p>
+            <p class="copy"><img src="img/footer-logo.png"><br><br>ТОВ "КОНСАЛТИНГ СИНДИКАТ"<br>ЕГРПОУ: 40300106, Адрес: 01033, г. Киев,<br>ул. Паньковская, 14</p>
           </div>
         </div>
         <div class="footer2">
           <div class="footer-inline"><a href="https://geniusmarketing.me/terms" target="_blank" class="modal-btn">Условия оказания услуг</a><a href="https://geniusmarketing.me/privacy" target="_blank" class="modal-btn">Политика конфиденциальности</a><a href="https://geniusmarketing.me/terms/#refund" target="_blank" class="modal-btn">Условия возврата</a><a href="https://geniusmarketing.me/terms/#preorder" target="_blank" class="modal-btn">Условия предзаказа услуг</a><a href="https://geniusmarketing.me/terms/#provider" target="_blank" class="modal-btn">Поставщики услуг</a><a href="https://geniusmarketing.me/disclaimer" target="_blank" class="modal-btn">Предупреждение</a></div>
         </div>
         <div class="footer3">
-          <p class="social">Присоединяйтесь к нам в социальных сетях:<br class="lg"><br><a href="https://www.facebook.com/GeniusMarketing.me/" target="_blank" class="icon-fb icon-soc"><i class="fa fa-facebook" aria-hidden="true"></i></a><a href="https://vk.com/geniusmarketing" target="_blank" class="icon-vk icon-soc"><i class="fa fa-vk" aria-hidden="true"></i></a><a href="https://www.instagram.com/geniusmarketingofficial/" target="_blank" class="icon-inst icon-soc"><i class="fa fa-instagram" aria-hidden="true"></i></a><a href="https://www.youtube.com/user/Olestimofeev" target="_blank" class="icon-yt icon-soc"><i class="fa fa-youtube" aria-hidden="true"></i></a></p>
+          <p class="social">Присоединяйтесь к нам в социальных сетях:<br class="lg"><br><a href="https://www.facebook.com/GeniusMarketing.me/" target="_blank" class="icon-fb icon-soc"><i class="fa fa-facebook" aria-hidden="true"></i></a><a href="https://vk.com/geniusmarketing" target="_blank" class="icon-vk icon-soc"><i class="fa fa-vk" aria-hidden="true"></i></a><a href="https://www.instagram.com/geniusmarketingofficial/" target="_blank" class="icon-inst icon-soc"><i class="fa fa-instagram" aria-hidden="true"></i></a><a href="https://t.me/OlesTim" target="_blank" class="icon-telegram icon-soc"><i class="fa fa-telegram" aria-hidden="true"></i></a><a href="https://www.youtube.com/user/Olestimofeev" target="_blank" class="icon-yt icon-soc"><i class="fa fa-youtube" aria-hidden="true"></i></a></p>
           <p class="text4"><span class="ru"><a href="tel:+74952410787">+7 (495) 241 07 87</a></span> (Россия)</p>
           <p class="text4"><span class="ru"><a href="tel:+380442371318">+38 (044) 237 13 18</a></span> (Украина)</p>
         </div>
@@ -161,6 +160,11 @@
       });
     </script>
     <!--end auto country code srcipt -->
+    <script>
+      var utm = '/?' + window.location.search.substr(1);
+      var tyurl = $('#checkrespo').val();
+      $('#checkrespo, #emailexist').val(tyurl + utm);
+    </script>
     <!--Validation script -->
     <script>
       function validate(formid, idexport, gtmPush)
@@ -172,7 +176,7 @@
         form.find('input.name').focus();
         form.find('input.email').focus();
         form.find('input.phone').focus();
-        form.find('input[type="submit"]').focus();
+        form.find('button[type="submit"]').focus();
         name = form.find('.name').val();
         email = form.find('.email').val();
         phone = form.find('.phone').val();

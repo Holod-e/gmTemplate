@@ -4,8 +4,15 @@
 	display: block;
 	margin: 0 auto;
 	transition: all 0.3s linear;
+	appearance: none;
+	 -webkit-appearance: none;
 	&:hover,
 	&:focus {
 		transform: scale(1.02);
 	}
+}
+
+.btn {
+	appearance: none;
+	 -webkit-appearance: none;
 }

@@ -52,6 +52,7 @@ script.
 		});
 
 	});
+
 script.
 	$(window).load(function(){
 		$.getJSON('https://freegeoip.net/json/', function (data) {
@@ -84,6 +85,13 @@ script.
 		});
 	});
 <!--end auto country code srcipt -->
+
+
+//- dinamic GR suucees for UTM
+script.
+		var utm ='/?' + window.location.search.substr(1);
+		var tyurl = $('#checkrespo').val();
+		$('#checkrespo, #emailexist').val(tyurl + utm);
 <!--Validation script -->
 script.
 	function validate(formid, idexport, gtmPush)
@@ -95,7 +103,7 @@ script.
 			form.find('input.name').focus();
 			form.find('input.email').focus();
 			form.find('input.phone').focus();
-			form.find('input[type="submit"]').focus();
+			form.find('button[type="submit"]').focus();
 			name = form.find('.name').val();
 			email = form.find('.email').val();
 			phone = form.find('.phone').val();
