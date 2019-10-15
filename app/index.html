@@ -31,7 +31,6 @@
     <meta property="fb:app_id" content="473200492729081">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><!-- build:css css/libs.min.css -->
     <link rel="stylesheet" href="css/libs.css"><!-- endbuild -->
-    <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/mainGM.css">
     <link rel="stylesheet" href="css/media.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -90,137 +89,7 @@
     <script src="js/popup_script.js"></script>
     <script src="js/jquery.countdown.js"></script><!-- endbuild -->
     <script src="js/intlTelInput.min.js"></script>
-    <script src="js/common.js"></script><!-- script for videobackground-->
-    <!--auto country code srcipt -->
-    <script>
-      $(function()
-      {
-        $("input.phone").intlTelInput(
-        {
-          utilsScript: 'js/utils.js',
-          defaultCountry: 'auto',
-          separateDialCode: false,
-          nationalMode: false,
-          initialCountry: 'auto',
-          geoIpLookup: function(callback)
-          {
-            $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp)
-            {
-              var countryCode = (resp && resp.country) ? resp.country : "";
-              callback(countryCode);
-            });
-          },
-          preferredCountries: ['ua', 'ru', 'by', 'kz']
-        });
-      });
-    </script>
-    <script>
-      $(window).load(function()
-      {
-        $.getJSON('https://freegeoip.net/json/', function(data)
-        {
-          var country = data.country_code;
-          if (country != 'UA')
-          {
-            (function(w, d, s, l, i)
-            {
-              w[l] = w[l] || [];
-              w[l].push(
-              {
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-              });
-              var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-              j.async = true;
-              j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-              f.parentNode.insertBefore(j, f);
-            })(window, document, 'script', 'dataLayer', 'GTM-5JMBF4G');
-          }
-          if (getCookie("phone"))
-          {
-            $("#phone").val(getCookie("phone"));
-          }
-          else if (country === 'UA')
-          {
-            $('#phone').val('+380');
-          }
-          else if (country === "RU")
-          {
-            $('#phone').val('+7');
-          }
-          else
-          {
-            var countryData = $("#phone").intlTelInput("getSelectedCountryData");
-            var dialCode = countryData.dialCode;
-            $('#phone').val('+' + dialCode);
-          }
-        });
-      });
-    </script>
-    <!--end auto country code srcipt -->
-    <script>
-      var utm = '/?' + window.location.search.substr(1);
-      var tyurl = $('#checkrespo').val();
-      $('#checkrespo, #emailexist').val(tyurl + utm);
-    </script>
-    <!--Validation script -->
-    <script>
-      function validate(formid, idexport, gtmPush)
-      {
-        var output = false;
-        var name, email, phone;
-        form = $(formid);
-        form.addClass('loading');
-        form.find('input.name').focus();
-        form.find('input.email').focus();
-        form.find('input.phone').focus();
-        form.find('button[type="submit"]').focus();
-        name = form.find('.name').val();
-        email = form.find('.email').val();
-        phone = form.find('.phone').val();
-        phone = phone.replace(/\s/g, '');
-        $(".last1").val(phone);
-        exp = 'crm/' + idexport;
-        if ($('.not_error').length == 3)
-        {
-          $.ajax(
-          {
-            type: "POST",
-            url: 'crm/export.php',
-            async: false,
-            data:
-            {
-              name: name,
-              email: email,
-              phone: phone,
-              idexport: idexport
-            },
-            success: function()
-            {
-              setCookie('name', form.find('.name').val(), 365);
-              setCookie('email', form.find('.email').val(), 365);
-              setCookie('last1', form.find('.last1').val(), 365);
-              setCookie('phone', form.find('.phone').val(), 365);
-              setCookie('phone1', form.find('.phone').val().substr(0, 3), 365);
-              setCookie('phone2', form.find('.phone').val().substr(3, 3), 365);
-              setCookie('phone3', form.find('.phone').val().substr(6), 365);
-              dataLayer.push(
-              {
-                'event': gtmPush
-              });
-              output = true;
-            }
-          });
-        }
-        else
-        {
-          form.removeClass('loading');
-          form.find('input.error').first().focus();
-        }
-        return output;
-      };
-    </script><!-- END Validation script -->
+    <script src="js/common.js"></script>
+    <script src="https://geniusmarketing.me/zoho/zohoNewDeal.js"></script>
   </body>
 </html>

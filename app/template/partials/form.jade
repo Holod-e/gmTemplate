@@ -1,4 +1,4 @@
-form.standart-form(id=formid , accept-charset="utf-8" onsubmit="return validate("+formid+","+idexport+","+gtmPush+");" action="https://www.geniusm360.ru/add_subscriber.html" method="post")
+form.standart-form#form(accept-charset="utf-8" onsubmit="return zohoNewDeal(form , 'productID', 'productName')" action="https://www.geniusm360.ru/add_subscriber.html" method="post")
 	.loader
 	.part.part1
 		p.label Ваши имя и фамилия
@@ -11,9 +11,15 @@ form.standart-form(id=formid , accept-charset="utf-8" onsubmit="return validate(
 		input.phone#phone(name="phone", type="text", required="")
 	.part.part4
 		input#last1.last1(type="hidden", name="custom_telephone")
-		input#checktoken(type="hidden", name="campaign_token", value=grtoken)
-		input#checkrespo(type="hidden", name="thankyou_url", value=tyurl)
-		input#emailexist(type="hidden", name="email_exists_url", value=emexist)
+		input#checktoken(type="hidden", name="campaign_token", value='tokenID')
+		input#checkrespo(type="hidden", name="thankyou_url", value='tyurl')
+		input#emailexist(type="hidden", name="email_exists_url", value='emexist')
 		input(type="hidden", name="forward_data", value="")
 		input(type="hidden", name="start_day", value="0")
+		//- utm inputs
+		input(type="hidden" name="utm_source" value="")
+		input(type="hidden" name="utm_medium" value="")
+		input(type="hidden" name="utm_term" value="")
+		input(type="hidden" name="utm_campaign" value="")
+		input(type="hidden" name="utm_content" value="")
 	button.btn.subm(type="submit" ) Принять участие
