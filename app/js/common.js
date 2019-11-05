@@ -78,24 +78,23 @@ $(window).load(function() {
 });
 
 
-$.get("https://geniusmarketing.me/ipapi/getdata.php", function(data) {
-	var obj = JSON.parse(data);
+$.get("https://ipapi.co/json/?key=e4192db949f63bdb4a84f9d73bf5cafa9921a6a5", function(data) {
+	console.log(data);
 	if(getCookie("phone")){
 		$('input.phone').val(getCookie("phone"));
 	}
 	else {
-		$('input.phone').val(obj.country_calling_code);
+		$('input.phone').val(data.country_calling_code);
 	}
 	$("input.phone").intlTelInput({
 		utilsScript       : 'js/utils.js',
 		defaultCountry    : 'auto',
 		separateDialCode  : false,
 		nationalMode      : false,
-		initialCountry    : obj.country,
+		initialCountry    : data.country,
 		preferredCountries: ['ua', 'ru', 'by', 'kz']
 	});
 });
-
 
 $('.btn-anchor').on('click', function(e) {
 	e.preventDefault();
