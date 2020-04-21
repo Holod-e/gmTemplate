@@ -20,7 +20,7 @@ var gulp = require("gulp"),																// gulp core
 		bourbon = require('node-bourbon'),										// bourbon libruary
 		plumber = require("gulp-plumber"),										// error reporter
 		imagemin = require('gulp-imagemin'),									// img optimisation
-		sourcemaps = require('gulp-sourcemaps'),
+		// sourcemaps = require('gulp-sourcemaps'),
 		wiredep = require('wiredep').stream,									// bower dependencies to your source code
 		spritesmith = require('gulp.spritesmith'),						// spretes generator
 		autoprefixer = require('gulp-autoprefixer'),					// sets missing browserprefixes
@@ -117,14 +117,14 @@ gulp.task('wiredep', function () {
 
 gulp.task('scss', function () {
 	gulp.src('./'+basedirname+'/sass/*.scss')														// get the files
-		.pipe(sourcemaps.init())
+		// .pipe(sourcemaps.init())
 		.pipe(plumber({errorHandler: notify.onError({
 			 title:    'Ошибка :(',
 			 message:  '<%= error.message %>'
 			})}))
 		.pipe(sass({includePaths: require('node-bourbon').includePaths}))
 		.pipe(autoprefixer({browsers: ['last 3 versions'], cascade: false}))
-		.pipe(sourcemaps.write())
+		// .pipe(sourcemaps.write())
 		.pipe(gulp.dest(''+basedirname+'/css'))														// where to put the file
 		.pipe(browserSync.stream());													// browsersync stream
 });
@@ -142,15 +142,6 @@ gulp.task('js', function() {
 		7.	IMAGES TASKS
 \*******************************************************************************/
 
-//sprite task
-gulp.task('sprite', function () {
-  var spriteData = gulp.src('./'+basedirname+'/img/sprite/*.png').pipe(spritesmith({
-    imgName: 'sprite.png',
-    cssName: 'sprite.css',
-    algorithm: 'top-down'
-  }));
-  return spriteData.pipe(gulp.dest('./'+basedirname+'/img/'));
-});
 
 // Compress Task
 gulp.task('compress', function() {
@@ -165,7 +156,7 @@ gulp.task('pngquant', function() {
 	return gulp.src('./'+basedirname+'/img/**/*.png')
 	.pipe(imageminPngquant({quality: '90', speed: 4})())
 	.pipe(gulp.dest('./'+basedirname+'/img'))													// where to put the file
-	});
+});
 
 // all img task
 gulp.task('images', function () {
@@ -184,73 +175,8 @@ gulp.task('imagesmin', function () {
 		.pipe(imageminJpegRecompress({loops: 1})())
 		.pipe(gulp.dest('./'+basedirname+'/img_optimized'))													// where to put the file
 });
-/*******************************************************************************\
-		8.	FONTS TASKS
-\*******************************************************************************/
-
-gulp.task('fonts', function () {
-	return gulp.src('./'+basedirname+'/fonts/**/*')											// get the files
-		.pipe(gulp.dest('dist/fonts'))												// where to put the file
-});
-
-/*******************************************************************************\
-		9.	LIBS TASKS (PERSONAL DEVELOPER LIBS)
-\*******************************************************************************/
-
-gulp.task('libs', function () {
-	return gulp.src('./'+basedirname+'/libs/**/*')											// get the files
-		.pipe(gulp.dest('dist/libs'))													// where to put the file
-});
-
-/*******************************************************************************\
-		10.	EXTRASS TASKS (ROOT FILES, EXCEPT HTML-FILES)
-\*******************************************************************************/
-
-gulp.task('extrass', function () {
-	return gulp.src([																				// get the files
-		''+basedirname+'/*.*',
-		'!'+basedirname+'/*.html'																					// exept '.html'
-	]).pipe(gulp.dest('dist'))															// where to put the file
-});
-
-/*******************************************************************************\
-		11.	BUILD TASKS
-\*******************************************************************************/
-//nomincss
-gulp.task('nomincss', function() {
-	return gulp.src('./'+basedirname+'/css/*.*')
-		.pipe(gulp.dest('dist/nomin/css'))
-	});
-gulp.task('nominjs', function() {
-	return gulp.src('./'+basedirname+'/js/*.*')
-		.pipe(gulp.dest('dist/nomin/js'))
-	});
 
 
-// Clean
-gulp.task('clean', function () {
-	return gulp.src('dist', {read: false})
-		.pipe(clean());																				// clean dir
-});
-
-// Build
-gulp.task('build', ['clean'], function () {
-	gulp.start('images');																		// images task
-	gulp.start('fonts');																		// fonts task
-	gulp.start('libs');																			// libs task
-	gulp.start('nomincss');																	// copy nomin css task
-	gulp.start('nominjs');																	// copy nomin js task
-	gulp.start('extrass');
-		return gulp.src(''+basedirname+'/*.html')
-			.pipe(useref())
-			.pipe(gulpif('*.js', uglify().on('error', gutil.log)))
-			.pipe(gulpif('main.css',uncss({
-            html: ['./'+basedirname+'/index.html']
-        })))
-			.pipe(gulpif('*.css', csso()))
-			.pipe(gulp.dest('./dist'));
-
-});
 
 gulp.task('min', function(){
 	return gulp.src(basedirname+'/*.html')
@@ -265,7 +191,7 @@ gulp.task('min', function(){
 })
 
 
-gulp.task('minify', ['min', 'imagesmin']);
+gulp.task('minify', ['min']);
 
 
 // gulp.task('jade', function() {

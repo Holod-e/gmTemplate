@@ -7,6 +7,8 @@ body {
 	color: #333333;
 	position: relative;
 	background-color: #ffffff;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 ////Удалить или закоментировать при адаптивном дизайне!//////////////
@@ -14,22 +16,22 @@ body {
 //////////////////////////////////////////////////////////////////////
 
 video.video {
-  min-height: 720px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  min-width: 100%;
-  background: #000;
-  z-index: -1; }
+	min-height: 720px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	min-width: 100%;
+	background: #000;
+	z-index: -1; }
 
 canvas.canvas {
-   min-height: 720px;
-   left: 0;
-   position: absolute;
-   top: 0;
-   min-width: 100%;
-   /* background: #000; */
-   z-index: -1;
+	 min-height: 720px;
+	 left: 0;
+	 position: absolute;
+	 top: 0;
+	 min-width: 100%;
+	 /* background: #000; */
+	 z-index: -1;
 }
 
 
@@ -53,16 +55,28 @@ a {
 
 //validatorGM styles//
  form input.error {
- 	box-shadow: inset 0px 0px 20px 1px rgba(255,0,0,0.3);
- 	border: 2px solid red !important;}
+	box-shadow: inset 0px 0px 20px 1px rgba(255,0,0,0.3);
+	border: 2px solid red !important;}
  form input.not_error {
- 	box-shadow: inset 0px 0px 20px 1px rgba(100,255,100,0.3);
- 	border: 2px solid #99FF99 !important;}
+	box-shadow: inset 0px 0px 20px 1px rgba(100,255,100,0.3);
+	border: 2px solid #99FF99 !important;}
 
 
 .container {
-  width: 100%;
-  max-width: 1260px;
-  padding: 0 10px;
-  margin: 0 auto;
+	width: 100%;
+	max-width: 1260px;
+	padding: 0 10px;
+	margin: 0 auto;
+}
+
+
+@mixin flex($justify: normal, $align: normal) {
+	display: flex;
+	flex-wrap: wrap;
+	@if $justify != normal {
+		justify-content: $justify;
+	}
+	@if $align != normal {
+		align-items: $align;
+	}
 }
